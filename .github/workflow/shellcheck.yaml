@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - main
+name: "Check shell script"
+
+jobs:
+  shellcheck:
+    name: shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v4
+      - name: Run shellcheck
+        uses: ludeeus/action-shellcheck@master
